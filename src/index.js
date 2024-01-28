@@ -1,12 +1,10 @@
 'use strict';
 
-let num = 10; // set interval
+let num = 100; // set interval
 
-nextIteration:
-for (let i = 1; i <= num; i++) { // For i to *num*
-  for (let j = 2; j < i; j++) { // check remainder of division
-    if (i % j === 0) console.log(i+' is not Prime');
+nextIteration: for (let i = 2; i <= num; i++) {
+  for (let j = 2; j < i; j++) {
+    if (i % j === 0) continue nextIteration;
   }
-
-  // console.log(i); 
+  console.log(`${i} is a simple number`);
 }
